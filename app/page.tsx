@@ -5,7 +5,7 @@ const PROJECTS = [
     description:
       'AI invoice extraction for a paper trading business. Photographs of handwritten documents become structured financial records via GPT-4o vision and a LangChain agent.',
     tech: ['Python', 'FastAPI', 'LangChain', 'GPT-4o', 'Flutter', 'Supabase'],
-    href: '#', // TODO: GitHub URL
+    href: 'https://github.com/Awanjee/arco-papers-api',
   },
   {
     number: '02',
@@ -13,7 +13,7 @@ const PROJECTS = [
     description:
       'Trip planning app with AI-assisted itinerary building. Flutter mobile and web client backed by an ASP.NET Core API.',
     tech: ['Flutter', 'ASP.NET Core', 'Azure', 'OpenAI'],
-    href: '#', // TODO: GitHub URL
+    href: '#', // repo not yet public
   },
   {
     number: '03',
@@ -21,7 +21,7 @@ const PROJECTS = [
     description:
       'Windows desktop app for AI-powered task decomposition. Type a goal, get a structured action plan.',
     tech: ['Flutter Desktop', 'OpenAI', 'Windows'],
-    href: '#', // TODO: GitHub URL
+    href: 'https://github.com/Awanjee/tashkeel',
   },
 ]
 
