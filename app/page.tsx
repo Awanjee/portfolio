@@ -1,7 +1,7 @@
 const PROJECTS = [
   {
     number: '01',
-    name: 'Arco Papers',
+    name: 'iStatis',
     description:
       'AI invoice extraction for a paper trading business. Photographs of handwritten documents become structured financial records via GPT-4o vision and a LangChain agent.',
     tech: ['Python', 'FastAPI', 'LangChain', 'GPT-4o', 'Flutter', 'Supabase'],
