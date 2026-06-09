@@ -5,7 +5,7 @@ const PROJECTS = [
     description:
       'AI invoice extraction for a paper trading business. Photographs of handwritten documents become structured financial records via GPT-4o vision and a LangChain agent.',
     tech: ['Python', 'FastAPI', 'LangChain', 'GPT-4o', 'Flutter', 'Supabase'],
-    href: 'https://github.com/Awanjee/arco-papers-api',
+    href: 'https://github.com/Awanjee/istatis-papers-api',
   },
   {
     number: '02',
