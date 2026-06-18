@@ -1,11 +1,13 @@
 const PROJECTS = [
   {
     number: '01',
-    name: 'iStatis',
+    name: 'iStatis / Arco Papers',
     description:
-      'AI invoice extraction for a paper trading business. Photographs of handwritten documents become structured financial records via GPT-4o vision and a LangChain agent.',
+      'AI invoice extraction for a paper trading business. Photos of handwritten documents become structured financial records via GPT-4o vision and a LangChain agent. Live in production.',
     tech: ['Python', 'FastAPI', 'LangChain', 'GPT-4o', 'Flutter', 'Supabase'],
-    href: 'https://github.com/Awanjee/istatis-papers-api',
+    href: '/istatis',
+    external: false,
+    live: true,
   },
   {
     number: '02',
@@ -13,7 +15,9 @@ const PROJECTS = [
     description:
       'Trip planning app with AI-assisted itinerary building. Flutter mobile and web client backed by an ASP.NET Core API.',
     tech: ['Flutter', 'ASP.NET Core', 'Azure', 'OpenAI'],
-    href: '#', // repo not yet public
+    href: '#',
+    external: false,
+    live: false,
   },
   {
     number: '03',
@@ -22,6 +26,8 @@ const PROJECTS = [
       'Windows desktop app for AI-powered task decomposition. Type a goal, get a structured action plan.',
     tech: ['Flutter Desktop', 'OpenAI', 'Windows'],
     href: 'https://github.com/Awanjee/tashkeel',
+    external: true,
+    live: false,
   },
 ]
 
@@ -30,9 +36,9 @@ export default function Home() {
     <div className="min-h-screen">
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a0a]/90 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-line-subtle bg-canvas/90 backdrop-blur-sm">
         <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
-          <a href="/" className="font-mono text-sm font-semibold text-[#07CEED] tracking-tight">
+          <a href="/" className="font-mono text-small font-semibold text-accent tracking-tight">
             awanjee.dev
           </a>
           <div className="flex items-center gap-6">
@@ -40,7 +46,7 @@ export default function Home() {
               href="https://github.com/Awanjee"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[#8b949e] hover:text-[#e2e8f0] transition-colors"
+              className="text-small text-ink-3 hover:text-ink-1 transition-colors"
             >
               GitHub
             </a>
@@ -48,13 +54,13 @@ export default function Home() {
               href="https://www.linkedin.com/in/muhammad-usama-awan-a97743138/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[#8b949e] hover:text-[#e2e8f0] transition-colors"
+              className="text-small text-ink-3 hover:text-ink-1 transition-colors"
             >
               LinkedIn
             </a>
             <a
               href="mailto:usamaawan925@gmail.com"
-              className="text-sm text-[#8b949e] hover:text-[#e2e8f0] transition-colors"
+              className="text-small text-ink-3 hover:text-ink-1 transition-colors"
             >
               Email
             </a>
@@ -65,23 +71,26 @@ export default function Home() {
       {/* Hero */}
       <section className="min-h-screen flex items-center">
         <div className="mx-auto max-w-5xl px-6 py-32">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-5">
+          <p className="font-mono text-small text-ink-3 mb-4 tracking-wider uppercase">
+            Full-stack engineer
+          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-5 text-ink-1">
             I build production<br />
-            <span className="text-[#07CEED]">AI features.</span>
+            <span className="text-accent">AI features.</span>
           </h1>
-          <p className="font-mono text-lg sm:text-xl text-[#4a5568] mb-12">
-            .NET, Flutter, LangChain.
+          <p className="text-body-lg text-ink-2 mb-12 max-w-md">
+            .NET, Flutter, LangChain. Seven years shipping systems that work, not just demo well.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
             <a
               href="#projects"
-              className="border border-[#07CEED] text-[#07CEED] px-6 py-3 text-sm font-semibold rounded hover:bg-[#07CEED] hover:text-black transition-all duration-200"
+              className="inline-flex items-center justify-center h-11 px-5 rounded-md bg-accent text-accent-contrast font-semibold text-small hover:bg-accent-hover active:bg-accent-press transition-colors"
             >
               View Projects
             </a>
             <a
               href="mailto:usamaawan925@gmail.com"
-              className="text-sm font-semibold text-[#8b949e] hover:text-[#e2e8f0] px-4 py-3 transition-colors"
+              className="inline-flex items-center h-11 px-4 text-small font-semibold text-ink-2 hover:text-ink-1 transition-colors"
             >
               Email Me →
             </a>
@@ -90,38 +99,46 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="border-t border-white/5">
+      <section id="projects" className="border-t border-line-subtle">
         <div className="mx-auto max-w-5xl px-6">
           <div className="py-8 flex items-center gap-3">
-            <span className="font-mono text-xs text-[#2d3748]">01 /</span>
-            <span className="text-sm text-[#4a5568]">Projects</span>
+            <span className="font-mono text-small text-ink-3">01 /</span>
+            <span className="text-small text-ink-3">Projects</span>
           </div>
           {PROJECTS.map((project) => (
-            <div key={project.name} className="py-10 border-t border-white/5">
+            <div key={project.name} className="py-10 border-t border-line-subtle">
               <div className="flex gap-8 sm:gap-16">
-                <span className="font-mono text-xs text-[#2d3748] mt-1.5 w-5 flex-shrink-0">
+                <span className="font-mono text-small text-ink-3 mt-1.5 w-5 flex-shrink-0">
                   {project.number}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 mb-3"
-                  >
-                    <h3 className="text-lg font-semibold text-[#e2e8f0] group-hover:text-[#07CEED] transition-colors">
-                      {project.name}
-                    </h3>
-                    <span className="text-[#4a5568] group-hover:text-[#07CEED] transition-colors text-sm">
-                      →
-                    </span>
-                  </a>
-                  <p className="text-sm text-[#8b949e] leading-relaxed mb-5 max-w-2xl">
+                  <div className="flex items-center gap-3 mb-3">
+                    <a
+                      href={project.href}
+                      target={project.external ? '_blank' : undefined}
+                      rel={project.external ? 'noopener noreferrer' : undefined}
+                      className="group inline-flex items-center gap-2"
+                    >
+                      <h3 className="text-h3 text-ink-1 group-hover:text-accent transition-colors">
+                        {project.name}
+                      </h3>
+                      <span className="text-ink-3 group-hover:text-accent transition-colors text-small">
+                        →
+                      </span>
+                    </a>
+                    {project.live && (
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-pill border bg-success/10 text-success border-success/30">
+                        <span className="w-[7px] h-[7px] rounded-full bg-current" />
+                        Live
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-body text-ink-2 leading-relaxed mb-5 max-w-2xl">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-x-4 gap-y-1">
                     {project.tech.map((t) => (
-                      <span key={t} className="font-mono text-xs text-[#4a5568]">
+                      <span key={t} className="font-mono text-small text-ink-3">
                         {t}
                       </span>
                     ))}
@@ -134,13 +151,13 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-24 border-t border-white/5">
+      <section id="about" className="py-24 border-t border-line-subtle">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-8 flex items-center gap-3">
-            <span className="font-mono text-xs text-[#2d3748]">02 /</span>
-            <span className="text-sm text-[#4a5568]">About</span>
+            <span className="font-mono text-small text-ink-3">02 /</span>
+            <span className="text-small text-ink-3">About</span>
           </div>
-          <p className="max-w-lg text-[#8b949e] leading-relaxed text-base border-l-2 border-[#07CEED]/20 pl-5">
+          <p className="max-w-lg text-body text-ink-2 leading-relaxed border-l-2 border-accent/30 pl-5">
             Full-stack engineer based in Islamabad, Pakistan. Seven years building production
             systems across enterprise software and fintech. Currently focused on AI integration:
             connecting LLMs to real business workflows using .NET, Python, and Flutter. I care
@@ -150,16 +167,16 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 border-t border-white/5">
+      <section id="contact" className="py-24 border-t border-line-subtle">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-8 flex items-center gap-3">
-            <span className="font-mono text-xs text-[#2d3748]">03 /</span>
-            <span className="text-sm text-[#4a5568]">Contact</span>
+            <span className="font-mono text-small text-ink-3">03 /</span>
+            <span className="text-small text-ink-3">Contact</span>
           </div>
           <div className="flex gap-6 flex-wrap">
             <a
               href="mailto:usamaawan925@gmail.com"
-              className="text-sm font-medium text-[#e2e8f0] hover:text-[#07CEED] transition-colors"
+              className="text-small font-medium text-ink-1 hover:text-accent transition-colors"
             >
               usamaawan925@gmail.com
             </a>
@@ -167,7 +184,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/muhammad-usama-awan-a97743138/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[#8b949e] hover:text-[#07CEED] transition-colors"
+              className="text-small text-ink-2 hover:text-accent transition-colors"
             >
               LinkedIn
             </a>
@@ -175,7 +192,7 @@ export default function Home() {
               href="https://github.com/Awanjee"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-[#8b949e] hover:text-[#07CEED] transition-colors"
+              className="text-small text-ink-2 hover:text-accent transition-colors"
             >
               GitHub
             </a>
@@ -184,9 +201,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-8">
+      <footer className="border-t border-line-subtle py-8">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="font-mono text-xs text-[#2d3748]">
+          <p className="font-mono text-small text-ink-3">
             © 2026 Usama Awan
           </p>
         </div>

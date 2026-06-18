@@ -5,3 +5,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Arco Design System — selection highlight */
+::selection {
+  background-color: rgba(125, 211, 252, 0.20);
+  color: #EEF1F4;
+}
+
